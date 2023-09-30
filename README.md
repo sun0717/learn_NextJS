@@ -10,6 +10,7 @@ Static Site Generation 静态站点生成器
 ### 拓展插件使用
 TypeScript ES7 Tailwind CSS
 ## 搭建第一个Next工程
+src/directory 那里选No, import alias 选No.
 ```bash
 npx create-next-app@13.4
 ```
