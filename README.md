@@ -98,3 +98,64 @@ Route (app)                              Size     First Load JS
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 ```
 时间戳发生了变化
+
+## Tailwind CSS
+### 边距
+|  Paddings  |  Margins  |
+|    ----    |   ----    |
+|  p-[number]:设置内边距  | m-[number]:设置外边距   | 
+|  px-[number]:水平内边距  |mx-[number]:水平外边距  |
+|  py-[number]:垂直内边距  |my-[number]:垂直外边距  |
+|  pt-[number]:顶部内边距  |mt-[number]:顶部外边距  |
+|  pr-[number]:右侧内边距  |mr-[number]:右侧外边距  |
+|  pb-[number]:下部内边距  |mb-[number]:下部外边距  |
+|  pl-[number]:左侧内边距  |ml-[number]:左侧外边距  |
+
+### 字体
+|  Size  |  Color  |  Thickness  |
+| ---- |  ----  |  ----  |
+|  text-xs  |  text-[color]  |  font-thin  |
+|  text-sm  |  bg-[color]  |  font-light  |
+|  text-base  |    |  font-normal  |
+|  text-lg  ||  font-medium  |
+|  text-xl  ||  font-bold  |
+|  text-2xl  ||
+|  text-3xl  ||
+
+优势：简洁，无需进行清理工作
+
+#### daisyUI：Tailwind中流行的组件库
+安装：
+```bash
+npm i -D daisyui@latest
+```
+导入：
+```javascript
+plugins: [require("daisyui")],
+```
+选择合适的主题：
+```html
+  // 第一步：
+  daisyui: {
+    themes: ["winter"],
+  },
+  // 第二步：HTML标签中使用主题
+  > layout.tsx
+  <html lang="en" data-theme="winter">
+
+  // 第三步：修改为表格 users page.tsx
+  <table className='table table-bordered'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {users.map(user => <tr key={user.id}>
+        <td>{user.name}</td>
+        <td>{user.email}</td>
+      </tr>)}
+    </tbody>
+  </table> 
+```
